@@ -1,0 +1,315 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2023-01-31T21:02:17+02:00",
+    "name": "Catactyl",
+    "author": "itznya10@gmail.com",
+    "description": "A generic pterodactyl egg",
+    "features": [
+        "eula",
+        "pid_limit"
+    ],
+    "docker_images": {
+        "quay.io\/devil38\/catactyl:amd64": "quay.io\/devil38\/catactyl:amd64"
+    },
+    "file_denylist": [],
+    "startup": ".\/minecraft.sh",
+    "config": {
+        "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \")! For help, type \",\r\n    \"userInteraction\": [\r\n        \"Go to eula.txt for more info.\"\r\n    ]\r\n}",
+        "logs": "{}",
+        "stop": "stop"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\necho hi",
+            "container": "debian:buster-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "NodeJS",
+            "description": "NodeJS version",
+            "env_variable": "NODEJS_VERSION",
+            "default_value": "14",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Java Version",
+            "description": "Default java version",
+            "env_variable": "JAVA_VERSION_SELECT",
+            "default_value": "8",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|in:8,11,16,17,custom",
+            "field_type": "text"
+        },
+        {
+            "name": "Python version",
+            "description": "",
+            "env_variable": "PYTHON_VERSION",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Mindustry map",
+            "description": "Default Maps Available: Ancient Caldera, Fork, Fortress, Glacier, Islands, Labyrinth, Maze, Shattered, Tendrils, Triad, Veins, Wasteland.",
+            "env_variable": "MAPNAME",
+            "default_value": "Ancient",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "SinusBot admin account",
+            "description": "SinusBot",
+            "env_variable": "OVERRIDE_PASSWORD",
+            "default_value": "change-this",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Rage.MP server name",
+            "description": "Server name that will be displayed to the master server.  (64 Char max)",
+            "env_variable": "SERVER_NAME",
+            "default_value": "RAGE:MP Unofficial server",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:64",
+            "field_type": "text"
+        },
+        {
+            "name": "Rage.MP max players",
+            "description": "Maximum number of players your server will hold.  (Max 100)",
+            "env_variable": "MAX_PLAYERS",
+            "default_value": "50",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|integer|between:1,100",
+            "field_type": "text"
+        },
+        {
+            "name": "Rage.MP announce",
+            "description": "Announce to the master server so people can see you in their server browser. This needs to be a 0 (false) or 1 (true) due to weird boolean parsing.",
+            "env_variable": "ANNOUNCE",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|boolean",
+            "field_type": "text"
+        },
+        {
+            "name": "Redis admin account password",
+            "description": "Redis",
+            "env_variable": "REDIS_PASSWORD",
+            "default_value": "replace-this",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "TeamSpeak3 file transfer port",
+            "description": "TeamSpeak3",
+            "env_variable": "FILE_TRANSFER",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Java arguments",
+            "description": "Addition arguments for java",
+            "env_variable": "JAVA_ARGUMENT",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "TypeScript compile folder",
+            "description": "TypeScript compile folder",
+            "env_variable": "COMPILE_FOLDER",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable",
+            "field_type": "text"
+        },
+        {
+            "name": "discord bot main file",
+            "description": "bot main file",
+            "env_variable": "GENERIC_BOT_FILE",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable",
+            "field_type": "text"
+        },
+        {
+            "name": "discord bot package",
+            "description": "generic package",
+            "env_variable": "GENERIC_PACKAGE",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "MTA:SA http port",
+            "description": "",
+            "env_variable": "HTTP_PORT",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "MTA:SA ASE port",
+            "description": "",
+            "env_variable": "ASE_PORT",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Terraria player limit",
+            "description": "",
+            "env_variable": "T_MAX_PLAYERS",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Terraria difficulty",
+            "description": "",
+            "env_variable": "T_DIFFICULTY",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Terraria MOTD",
+            "description": "",
+            "env_variable": "MOTD",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Terraria server language",
+            "description": "",
+            "env_variable": "T_LANGUAGE",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Terraria world name",
+            "description": "",
+            "env_variable": "T_WORLD_NAME",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Terraria world size",
+            "description": "",
+            "env_variable": "T_WORLD_SIZE",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Mindustry server name",
+            "description": "",
+            "env_variable": "MINDUSTRY_SERVER_NAME",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "MinioS3 startup type",
+            "description": "normal,rotate,update",
+            "env_variable": "MINIO_STARTUP_TYPE",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "TeaSpeak query port",
+            "description": "",
+            "env_variable": "TEA_QUERY_PORT",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "TeaSpeak file transfer port",
+            "description": "",
+            "env_variable": "TEA_FILE_PORT",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Default Map for srcds games",
+            "description": "Default map used when starting the server.",
+            "env_variable": "SRCDS_MAP",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Composer modules",
+            "description": "Specify the composer modules you want to install, separate the packages with a space",
+            "env_variable": "COMPOSER_MODULES",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        }
+    ]
+}
